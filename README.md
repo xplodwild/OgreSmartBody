@@ -23,6 +23,10 @@ Example of use:
 	sbmgr->addAssetPath("motion", "Data/SmartBody/sbm-common/common-sk");
 	sbmgr->addAssetPath("script", "Data/SmartBody/sbm-common/scripts");
 
+	// !!! In your FrameListener's frameStarted
+	sbmgr->update(evt.timeSinceLastFrame);
+	// !!!
+	
 	// create some pawns
 	CT::SmartBodyPawnPtr pawn1 = sbmgr->createPawn(CT::SmartBodyEnums::PAWNSHAPE_SPHERE);
 	pawn1->setPosition(Ogre::Vector3(100, 0, 0));
